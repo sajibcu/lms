@@ -1,0 +1,29 @@
+[04-Jan-2019 12:25:50 UTC] PHP Fatal error:  Call to undefined function get_total_unread_messages() in /home/deepclinic/public_html/application/views/layout/main_wrapper.php on line 595
+[04-Jan-2019 12:29:55 UTC] PHP Fatal error:  Call to undefined function get_total_unread_messages() in /home/deepclinic/public_html/application/views/layout/main_wrapper.php on line 595
+[04-Jan-2019 12:42:00 UTC] PHP Fatal error:  Call to undefined function get_total_unread_messages() in /home/deepclinic/public_html/application/views/layout/main_wrapper.php on line 595
+[05-Jan-2019 07:00:20 UTC] PHP Fatal error:  Call to undefined function get_total_unread_messages() in /home/deepclinic/public_html/application/views/layout/main_wrapper.php on line 595
+[05-Jan-2019 07:01:41 UTC] PHP Fatal error:  Call to undefined function get_total_unread_messages() in /home/deepclinic/public_html/application/views/layout/main_wrapper.php on line 595
+[05-Jan-2019 07:01:42 UTC] PHP Fatal error:  Call to undefined function get_total_unread_messages() in /home/deepclinic/public_html/application/views/layout/main_wrapper.php on line 595
+[05-Jan-2019 07:02:30 UTC] PHP Fatal error:  Call to undefined function get_total_unread_messages() in /home/deepclinic/public_html/application/views/layout/main_wrapper.php on line 595
+[09-Jan-2019 14:58:52 UTC] PHP Notice:  Undefined index: HTTP_HOST in /home/belahef/public_html/application/config/config.php on line 26
+[16-Jan-2019 13:25:01 UTC] PHP Notice:  Undefined index: HTTP_HOST in /home/belahef/public_html/application/config/config.php on line 26
+[16-Jan-2019 13:26:54 UTC] PHP Notice:  Undefined index: HTTP_HOST in /home/belahef/public_html/application/config/config.php on line 26
+[16-Jan-2019 17:52:04 UTC] PHP Notice:  Undefined index: HTTP_HOST in /home/belahef/public_html/application/config/config.php on line 26
+[18-Jan-2019 15:31:05 UTC] PHP Notice:  Undefined index: HTTP_HOST in /home/belahef/public_html/application/config/config.php on line 26
+[18-Jan-2019 15:35:49 UTC] PHP Notice:  Undefined index: HTTP_HOST in /home/belahef/public_html/application/config/config.php on line 26
+[18-Jan-2019 15:38:46 UTC] PHP Notice:  Undefined index: HTTP_HOST in /home/belahef/public_html/application/config/config.php on line 26
+[20-Jan-2019 04:02:21 UTC] PHP Fatal error:  Allowed memory size of 33554432 bytes exhausted (tried to allocate 22791076 bytes) in /home/belahef/public_html/system/libraries/Image_lib.php on line 1471
+[23-Jan-2019 16:09:06 UTC] PHP Notice:  Undefined index: HTTP_HOST in /home/belahef/public_html/application/config/config.php on line 26
+[25-Jan-2019 13:29:43 UTC] PHP Notice:  Undefined index: HTTP_HOST in /home/belahef/public_html/application/config/config.php on line 26
+[25-Jan-2019 13:29:44 UTC] PHP Notice:  Undefined index: HTTP_HOST in /home/belahef/public_html/application/config/config.php on line 26
+[30-Jan-2019 13:34:05 UTC] PHP Notice:  Undefined index: HTTP_HOST in /home/belahef/public_html/application/config/config.php on line 26
+[30-Jan-2019 22:14:54 UTC] PHP Notice:  Undefined index: HTTP_HOST in /home/belahef/public_html/application/config/config.php on line 26
+[06-Feb-2019 13:27:29 UTC] PHP Notice:  Undefined index: HTTP_HOST in /home/belahef/public_html/application/config/config.php on line 26
+[07-Feb-2019 01:51:36 UTC] PHP Notice:  Undefined index: HTTP_HOST in /home/belahef/public_html/application/config/config.php on line 26
+[14-Feb-2019 02:44:23 UTC] PHP Notice:  Undefined index: HTTP_HOST in /home/belahef/public_html/application/config/config.php on line 26
+[17-Feb-2019 06:19:28 UTC] PHP Notice:  Undefined index: HTTP_HOST in /home/belahef/public_html/application/config/config.php on line 26
+[21-Feb-2019 00:14:54 UTC] PHP Notice:  Undefined index: HTTP_HOST in /home/belahef/public_html/application/config/config.php on line 26
+[24-Feb-2019 17:53:00 UTC] PHP Parse error:  syntax error, unexpected ''setting_model'' (T_CONSTANT_ENCAPSED_STRING), expecting ')' in /home/belahef/public_html/application/controllers/dashboard_receptionist/appointment/Appointment.php on line 13
+[24-Feb-2019 17:56:16 UTC] PHP Parse error:  syntax error, unexpected ')' in /home/belahef/public_html/application/controllers/dashboard_receptionist/appointment/Appointment.php on line 195
+[24-Feb-2019 17:56:20 UTC] PHP Parse error:  syntax error, unexpected ')' in /home/belahef/public_html/application/controllers/dashboard_receptionist/appointment/Appointment.php on line 195
+[24-Feb-2019 17:56:51 UTC] PHP Parse error:  syntax error, unexpected ')' in /home/belahef/public_html/application/controllers/dashboard_receptionist/appointment/Appointment.php on line 195
