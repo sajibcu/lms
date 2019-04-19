@@ -68,142 +68,12 @@ $settings = $this->db->select("site_align")
 
         <!-- Site wrapper -->
         <div class="wrapper">
-            <header class="main-header"> 
-
-                <?php $logo = $this->session->userdata('logo'); ?>
-                <?php $favicon = $this->session->userdata('favicon'); ?>
-                <a href="<?php echo base_url('dashboard/home') ?>" class="logo"> <!-- Logo -->
-                    <span class="logo-mini">
-                        <img src="<?php echo (!empty($favicon)?base_url($favicon):base_url("assets/images/logo.png")) ?>" alt="">
-                    </span>
-                    <span class="logo-lg">
-                        <img src="<?php echo (!empty($logo)?base_url($logo):base_url("assets/images/logo.png")) ?>" alt="">
-                    </span>
-                </a>
-
-                <!-- Header Navbar -->
-                <nav class="navbar navbar-static-top">
-                    <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button"> <!-- Sidebar toggle button-->
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="pe-7s-keypad"></span>
-                    </a>
-                    <div class="navbar-custom-menu">
-                        <ul class="nav navbar-nav">
-                            <!-- Out of Stock Alert -->
-                            <?php  
-                                $nout_stocks = get_cout_out_of_stock();
-                                $nexpired_stocks = get_cout_expired_medicine_stock();
-                            ?>
-                            <li class="dropdown dropdown-user">
-                                <?php if($nexpired_stocks): ?>
-                                    <a href="<?= base_url('pharmacy_manager/stock/expired_stock') ?>"> 
-                                        <i class="fa fa-bell-o"></i>
-                                        <span class="label label-danger"><?= $nexpired_stocks ?></span>
-                                    </a>
-                                <?php else: ?>
-                                    <a href="<?= $nexpired_stocks ? base_url('pharmacy_manager/stock/expired_stock') : '#' ?>" class="dropdown-toggle" data-toggle="dropdown"> 
-                                        <i class="fa fa-bell-o"></i>
-                                    </a>
-                                <?php endif ?>
-                            </li>
-                            <li class="dropdown dropdown-user">
-                                <?php if($nout_stocks): ?>
-                                    <a href="<?= base_url('pharmacy_manager/stock/out_of_stock') ?>"> 
-                                        <i class="pe-7s-attention"></i>
-                                        <span class="label label-danger"><?= $nout_stocks ?></span>
-                                    </a>
-                                <?php else: ?>
-                                    <a href="<?= $nout_stocks ? base_url('pharmacy_manager/stock/out_of_stock') : '#' ?>" class="dropdown-toggle" data-toggle="dropdown"> 
-                                        <i class="pe-7s-attention"></i>
-                                    </a>
-                                <?php endif ?>
-                            </li>
-                            <!-- settings -->
-                            <li class="dropdown dropdown-user">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown"> <i class="pe-7s-settings"></i></a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="<?php echo base_url('dashboard/profile'); ?>"><i class="pe-7s-users"></i> <?php echo display('profile') ?></a></li>
-                                    <li><a href="<?php echo base_url('dashboard/form'); ?>"><i class="pe-7s-settings"></i> <?php echo display('edit_profile') ?></a></li>
-                                    <li><a href="<?php echo base_url('logout') ?>"><i class="pe-7s-key"></i> <?php echo display('logout') ?></a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </div>
-                </nav>
-            </header>
+            <!-- include header -->
+            <?php include 'header.php'?>
 
             <!-- =============================================== -->
             <!-- Left side column. contains the sidebar -->
-            <aside class="main-sidebar">
-                <!-- sidebar -->
-                <div class="sidebar">
-                    <!-- Sidebar user panel -->
-                    <div class="user-panel text-center">
-                        <?php $picture = $this->session->userdata('picture'); ?>
-                        <div class="image">
-                            <img src="<?php echo (!empty($picture)?base_url($picture):base_url("assets/images/no-img.png")) ?>" class="img-circle" alt="User Image">
-                        </div>
-                        <div class="info">
-                            <p><?php echo $this->session->userdata('fullname') ?></p>
-                            <a href="#"><i class="fa fa-circle text-success"></i>
-                            <?php   
-                                $userRoles = array( 
-                                    '1' => display('admin'),
-                                    '2' => display('doctor'),
-                                    '3' => display('accountant'),
-                                    '4' => display('laboratorist'),
-                                    '5' => display('nurse'),
-                                    '6' => display('pharmacist'),
-                                    '7' => display('receptionist'),
-                                    '8' => display('representative'), 
-                                    '9' => display('case_manager') 
-                                ); 
-                                echo $userRoles[$this->session->userdata('user_role')];
-                            ?></a>
-                        </div>
-                    </div> 
-                    <!-- Dynamic Navigation Ber -->
-                    <ul class="sidebar-menu"> 
-                        <?php 
-                        $group = '0';
-                        $cat_id = 0;
-                        $html = '';
-                        $tre_menu = false;
-
-                        foreach($nav as $row){
-                            if($group != $row->group_id){
-                                if($tre_menu == true)
-                                {
-                                    $html .='</ul>';
-                                }
-                                if($group != '0')
-                                {
-                                    //echo 'help';
-                                    $html .='</li>';
-                                }
-                                $group = $row->group_id;
-
-                                $html .='<li class="treeview"><a href="#">'.$row->group_icon.$row->group_name.'<span class="pull-right-container">
-                                    <i class="fa fa-angle-left pull-right"></i>
-                                </span></a>';
-                                if($row->group_child_sts==1)
-                                {
-                                    $tre_menu = true;
-                                    $html .= '<ul class="treeview-menu">';
-                                }else $tre_menu = false;
-                            }
-
-                            $html .='<li><a href="'.base_url().$row->cat_url.'">'.$row->cat_icon.$row->cat_name.'</a></li>';
-                        }
-                        echo '</li>'.$html;
-                        ?>
-                    </ul>
-
-                    <!-- end -->
-
-                    
-                </div> <!-- /.sidebar -->
-            </aside>
+            <?php include 'side_bar.php'?>
 
             <!-- =============================================== -->
             <!-- Content Wrapper. Contains page content -->
@@ -246,6 +116,7 @@ $settings = $this->db->select("site_align")
                     
 
                     <!-- content -->
+
                     <?php echo (!empty($content)?$content:null) ?>
 
                 </div> <!-- /.content -->

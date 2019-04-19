@@ -133,25 +133,7 @@ class Dashboard extends CI_Controller {
         redirect('login');  
 
         $data['title'] = display('home');
-        $data['nav'] = $this->db->query("SELECT 
-                                j3.name AS group_name
-                                ,j1.group_id  AS group_id
-                                ,j3.icon  AS group_icon
-                                ,j3.url AS group_url
-                                ,j3.child_sts AS  group_child_sts
-                                ,j2.name AS cat_name
-                                ,j2.icon AS cat_icon
-                                ,j2.url AS cat_url
-                                FROM
-                                (
-                                    SELECT * FROM user_right WHERE user_id = 1
-                                ) s
-                                LEFT OUTER JOIN sys_link j1 ON j1.id = s.link_id 
-                                LEFT OUTER JOIN sys_cat j2 ON j2.id = j1.cat_id AND j2.sts=1
-                                LEFT OUTER JOIN sys_group j3 ON j3.id = j1.group_id AND j3.sts=1
-                                GROUP BY j1.cat_id
-                                ORDER BY j3.order,j2.order")->result();
-        #------------------------------#
+        #------------------------------# 
         $data['notify']   = $this->dashboard_model->notify(); 
         $data['enquires'] = $this->dashboard_model->enquiry();  
         $data['chart']    = $this->dashboard_model->chart();    

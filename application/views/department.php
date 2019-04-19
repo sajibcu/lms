@@ -29,8 +29,12 @@
                                     <td><?php echo character_limiter($department->description, 60); ?></td>
                                     <td><?php echo (($department->status==1)?display('active'):display('inactive')); ?></td>
                                     <td class="center">
+                                    <?php if($pageRights['EDIT']==1){?>
                                         <a href="<?php echo base_url("department/edit/$department->dprt_id") ?>" class="btn btn-xs  btn-primary"><i class="fa fa-edit"></i></a> 
+                                    <?php } ?>
+                                    <?php if($pageRights['DELETED']==1){?>
                                         <a href="<?php echo base_url("department/delete/$department->dprt_id") ?>" onclick="return confirm('<?php echo display("are_you_sure") ?>')" class="btn btn-xs  btn-danger"><i class="fa fa-trash"></i></a> 
+                                    <?php } ?>
                                     </td>
                                 </tr>
                                 <?php $sl++; ?>

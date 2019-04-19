@@ -8,11 +8,11 @@ class Department extends CI_Controller {
 		parent::__construct();
 		
 		$this->load->model(array(
-			'department_model'
+			'department_model',
+			'user_model'
 		));
 		
 		if ($this->session->userdata('isLogIn') == false 
-			|| $this->session->userdata('user_role') != 1 
 		) 
 		redirect('login'); 
 
@@ -23,6 +23,7 @@ class Department extends CI_Controller {
 		$data['title'] = display('department_list');
 		#-------------------------------#
 		$data['departments'] = $this->department_model->read();
+		$data['pageRights'] = $this->user_model->categoryRightsInformation('4'); 
 		$data['content'] = $this->load->view('department',$data,true);
 		$this->load->view('layout/main_wrapper',$data);
 	} 
